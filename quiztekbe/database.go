@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"github.com/jackc/pgx/v5/pgxpool"
-	"github.com/joho/godotenv"
 	"log"
 	"os"
 )
@@ -11,9 +10,11 @@ import (
 var db *pgxpool.Pool
 
 func connectToDb() error {
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	//if err := godotenv.Load(); err != nil {
+	//	log.Fatal("Error loading .env file")
+	//}
+	// docker compose handles it
+
 	dsn := os.Getenv("DATABASE_URL")
 	if dsn == "" {
 		log.Fatal("DATABASE_URL environment variable not set")

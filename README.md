@@ -8,3 +8,6 @@ open terminal
 cd to /quiztek
 make sure docker is installed
 > docker compose up
+
+Latest commit before deadline had a rlly small error with env causing the be to fail completely :(
+Now: commented out godotenv load cause it's already handled by docker compose
